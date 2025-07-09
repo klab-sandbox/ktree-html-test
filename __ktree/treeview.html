@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+
+  <title>Ktree</title>
+
+  <link rel="stylesheet" type="text/css" href="res/style.css">
+  <link rel="stylesheet" type="text/css" href="res/js/jquery.treeview.css">
+  <link rel="icon" type="image/png" href="res/favicon.png">
+
+  <script src="res/js/jquery.js"></script>
+  <script src="res/js/jquery.treeview.js"></script>
+
+  <script>
+    function openFile(event, filePath) {
+      event.preventDefault();
+      console.log("[DEBUG] Opening file: " + filePath);
+      parent.frames["main"].location.href = "fileview.html?file=" + encodeURIComponent(filePath);
+    }
+
+    $(document).ready(function () {
+      $("#tree").treeview({
+        animated: "fast",
+        collapsed: true,
+        unique: false,
+        control: "#control"
+      });
+      $("#init").text(""); // Ensure this element exists in your HTML
+    });
+  </script>
+</head>
+
+<body>
+  <h2>Ktree:</h2>
+
+  <div id="control">
+    <a href="#">Collapse</a> | <a href="#">Expand</a>
+  </div>
+
+  <ul id="tree" class="filetree">
+        <li><span class='folder'><a target='main'>koncepts</a></span>
+    <ul>
+    <li><span class='folder'><a target='main'>array</a></span>
+    <ul>
+    <li><span class='file'><a href='#' onclick='openFile(event, "array/reverse-array.md")' target='main' title='Type: text/x-c | Size: 1.9KiB | Modified: 2025-07-09 13:58'>reverse-array.md</a></span></li>
+    </ul></li>
+    <li><span class='folder'><a target='main'>.github</a></span>
+    <ul>
+    <li><span class='folder'><a target='main'>workflows</a></span>
+    <ul>
+    <li><span class='file'><a href='#' onclick='openFile(event, ".github/workflows/ktags_build_xref.sh")' target='main' title='Type: text/x-shellscript | Size: 2.3KiB | Modified: 2025-07-09 13:58'>ktags_build_xref.sh</a></span></li>
+    <li><span class='file'><a href='#' onclick='openFile(event, ".github/workflows/ktags.yml")' target='main' title='Type: text/plain | Size: 1.6KiB | Modified: 2025-07-09 13:58'>ktags.yml</a></span></li>
+    </ul></li>
+    </ul></li>
+    <li><span class='folder'><a target='main'>linked-list</a></span>
+    <ul>
+    <li><span class='file'><a href='#' onclick='openFile(event, "linked-list/append.c")' target='main' title='Type: text/x-c | Size: 844B | Modified: 2025-07-09 13:58'>append.c</a></span></li>
+    <li><span class='file'><a href='#' onclick='openFile(event, "linked-list/common.h")' target='main' title='Type: text/x-c | Size: 410B | Modified: 2025-07-09 13:58'>common.h</a></span></li>
+    <li><span class='file'><a href='#' onclick='openFile(event, "linked-list/insert-at.c")' target='main' title='Type: text/x-c | Size: 1.1KiB | Modified: 2025-07-09 13:58'>insert-at.c</a></span></li>
+    <li><span class='file'><a href='#' onclick='openFile(event, "linked-list/main.c")' target='main' title='Type: text/x-c | Size: 639B | Modified: 2025-07-09 13:58'>main.c</a></span></li>
+    <li><span class='file'><a href='#' onclick='openFile(event, "linked-list/Makefile")' target='main' title='Type: text/x-makefile | Size: 102B | Modified: 2025-07-09 13:58'>Makefile</a></span></li>
+    <li><span class='file'><a href='#' onclick='openFile(event, "linked-list/prepend.c")' target='main' title='Type: text/x-c | Size: 653B | Modified: 2025-07-09 13:58'>prepend.c</a></span></li>
+    <li><span class='file'><a href='#' onclick='openFile(event, "linked-list/README.md")' target='main' title='Type: text/plain | Size: 204B | Modified: 2025-07-09 13:58'>README.md</a></span></li>
+    <li><span class='file'><a href='#' onclick='openFile(event, "linked-list/reverse.c")' target='main' title='Type: text/x-c | Size: 628B | Modified: 2025-07-09 13:58'>reverse.c</a></span></li>
+    </ul></li>
+    <li><span class='folder'><a target='main'>networks</a></span>
+    <ul>
+    <li><span class='folder'><a target='main'>bi-directional-socket</a></span>
+    <ul>
+    <li><span class='file'><a href='#' onclick='openFile(event, "networks/bi-directional-socket/client.c")' target='main' title='Type: text/x-c | Size: 4.9KiB | Modified: 2025-07-09 13:58'>client.c</a></span></li>
+    <li><span class='file'><a href='#' onclick='openFile(event, "networks/bi-directional-socket/.gitignore")' target='main' title='Type: text/plain | Size: 19B | Modified: 2025-07-09 13:58'>.gitignore</a></span></li>
+    <li><span class='file'><a href='#' onclick='openFile(event, "networks/bi-directional-socket/Makefile")' target='main' title='Type: text/x-makefile | Size: 184B | Modified: 2025-07-09 13:58'>Makefile</a></span></li>
+    <li><span class='file'><a href='#' onclick='openFile(event, "networks/bi-directional-socket/server.c")' target='main' title='Type: text/x-c | Size: 4.0KiB | Modified: 2025-07-09 13:58'>server.c</a></span></li>
+    </ul></li>
+    <li><span class='file'><a href='#' onclick='openFile(event, "networks/ethernet-frame.md")' target='main' title='Type: text/plain | Size: 5.1KiB | Modified: 2025-07-09 13:58'>ethernet-frame.md</a></span></li>
+    <li><span class='file'><a href='#' onclick='openFile(event, "networks/osi-model.md")' target='main' title='Type: text/plain | Size: 1.9KiB | Modified: 2025-07-09 13:58'>osi-model.md</a></span></li>
+    </ul></li>
+    <li><span class='folder'><a target='main'>pointers</a></span>
+    <ul>
+    <li><span class='file'><a href='#' onclick='openFile(event, "pointers/pointer-arithmetics.md")' target='main' title='Type: text/plain | Size: 426B | Modified: 2025-07-09 13:58'>pointer-arithmetics.md</a></span></li>
+    </ul></li>
+    <li><span class='file'><a href='#' onclick='openFile(event, "README.md")' target='main' title='Type: text/plain | Size: 23B | Modified: 2025-07-09 13:58'>README.md</a></span></li>
+    <li><span class='folder'><a target='main'>threads</a></span>
+    <ul>
+    <li><span class='file'><a href='#' onclick='openFile(event, "threads/pthreads.md")' target='main' title='Type: text/x-c | Size: 35KiB | Modified: 2025-07-09 13:58'>pthreads.md</a></span></li>
+    </ul></li>
+    <li><span class='folder'><a target='main'>tree</a></span>
+    <ul>
+    <li><span class='file'><a href='#' onclick='openFile(event, "tree/tree-traversal.md")' target='main' title='Type: text/plain | Size: 1.2KiB | Modified: 2025-07-09 13:58'>tree-traversal.md</a></span></li>
+    <li><span class='file'><a href='#' onclick='openFile(event, "tree/tree-types.md")' target='main' title='Type: text/plain | Size: 1.5KiB | Modified: 2025-07-09 13:58'>tree-types.md</a></span></li>
+    </ul></li>
+    </ul></li>
+  </ul>
+</body>
+
+</html>
